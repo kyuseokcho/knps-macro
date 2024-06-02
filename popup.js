@@ -4,8 +4,8 @@
     const MESSAGE_CONNECTION_FAIL = '연동에 실패하였습니다.<br>입력하신 정보를 다시 확인해주세요.';
 
     const init = () => {
-        document.getElementById('bot-token').value = localStorage.getItem('KTX_MACRO::bot-token');
-        document.getElementById('chat-id').value = localStorage.getItem('KTX_MACRO::chat-id');
+        document.getElementById('bot-token').value = localStorage.getItem('KNPS_MACRO::bot-token');
+        document.getElementById('chat-id').value = localStorage.getItem('KNPS_MACRO::chat-id');
     }
 
     const save = () => {
