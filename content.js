@@ -1,6 +1,6 @@
 let uid = 1;
-const MAIN_URI = "https://www.letskorail.com/ebizprd/EbizPrdTicketPr21111_i1.do";
-const LOGIN_PAGE_URI = "https://www.letskorail.com/korail/com/login.do";
+const MAIN_URI = "https://reservation.knps.or.kr/reservation/searchSimpleCampReservation.do";
+const LOGIN_PAGE_URI = "https://reservation.knps.or.kr/mmb/mmbLogin.do";
 
 const createCheckbox = () => {
   const $rows = document.querySelectorAll("#tableResult > tbody > tr");
@@ -33,7 +33,7 @@ const isChecked = uid => {
   return checkedItems.includes(String(uid));
 };
 
-const isLogin = () => !!document.querySelectorAll(".gnb_list > .log_nm").length;
+const isLogin = () => !!document.querySelectorAll(".info-area > .name").length;
 
 const getCheckboxTemplate = uid => {
   if (!uid) {
@@ -43,7 +43,7 @@ const getCheckboxTemplate = uid => {
   return `
     <div>
       <label>
-        <input type="checkbox" class="ktx-macro-checkbox" value="${uid}" ${isChecked(uid) && "checked"}>
+        <input type="checkbox" class="knps-macro-checkbox" value="${uid}" ${isChecked(uid) && "checked"}>
         매크로
       </label>
     </div>
@@ -51,7 +51,7 @@ const getCheckboxTemplate = uid => {
 };
 
 const setCheckboxEvent = () => {
-  const $checkboxes = document.querySelectorAll(".ktx-macro-checkbox");
+  const $checkboxes = document.querySelectorAll(".knps-macro-checkbox");
 
   for (let i = 0; i < $checkboxes.length; i++) {
     $checkboxes[i].addEventListener("click", () => {
@@ -172,7 +172,7 @@ const reload = () => {
 
 const saveCheckboxState = () => {
   let checkedItems = [];
-  const $checkboxes = document.querySelectorAll(".ktx-macro-checkbox");
+  const $checkboxes = document.querySelectorAll(".knps-macro-checkbox");
 
   for (let i = 0; i < $checkboxes.length; i++) {
     if ($checkboxes[i].checked) {
@@ -207,14 +207,14 @@ const saveCheckboxState = () => {
   document.querySelector(".btn_inq").insertAdjacentHTML(
     "beforeend",
     `
-      <button type="button" class="ktx-macro-button">
+      <button type="button" class="knps-macro-button">
         ${isStarted ? "자동 예매 정지" : "자동 예매 시작"}
       </button>
     `
   );
 
   document
-    .querySelector(".ktx-macro-button")
+    .querySelector(".knps-macro-button")
     .addEventListener("click", isStarted ? macroStop : macroStart);
 
   createCheckbox();
