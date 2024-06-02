@@ -1,9 +1,9 @@
 {
   "manifest_version": 2,
-  "name": "KTX Macro",
-  "description": "KTX 매진 좌석 예약 도구",
-  "version": "1.4.0",
-  "permissions": ["https://www.letskorail.com/"],
+  "name": "KNPS Macro",
+  "description": "KNPS 매진 예약 도구",
+  "version": "0.0.1",
+  "permissions": ["https://reservation.knps.or.kr/"],
   "icons": {
     "96": "icon96.png"
   },
