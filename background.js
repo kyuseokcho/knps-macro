@@ -12,8 +12,8 @@ const playSound = () => {
 };
 
 const sendTelegramMessage = () => {
-    const botToken = localStorage.getItem('KTX_MACRO::bot-token');
-    const chatId = localStorage.getItem('KTX_MACRO::chat-id');
+    const botToken = localStorage.getItem('KNPS_MACRO::bot-token');
+    const chatId = localStorage.getItem('KNPS_MACRO::chat-id');
 
     if (!botToken || !chatId) {
         return;
